@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+.clsFlex{
+    display:flex;
+    justify-content:center;    
+
+}
+.clsFlex div{
+    padding-right: 10px;
+    padding-left: 10px;
+    background:linear-gradient(#250001,#A50104);
+    color:#FCBA04;
+    font-size: 2rem;
+    box-shadow: 10px 10px 5px lightgray;
+}
+.clsHeading{
+    text-align:center;
+    color:#590004;
+    font-size:3rem;
+    padding-bottom:10px;
+}
