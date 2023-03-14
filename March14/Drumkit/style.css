@@ -1,0 +1,63 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clsMainInstrumentList{
+    align:center;
+    margin-top:10px;
+    padding:10px;
+    display:flex;
+    width:75%;
+    border-radius: 20px;
+    color:yellow;
+    background:linear-gradient(#222, #822);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    box-shadow: 5px 10px 5px lightgray;
+    user-select:none;
+}
+.clsInstrument{
+    padding-left:10px;
+    padding-right:10px;
+    text-align: center;
+    cursor:url("./Cursor/cursor.cur"), auto;
+}
+p{
+    padding-top:5px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+#idPictures{
+    display:flex;
+    justify-content: center;
+    background-color: white;
+    width:100%;
+    top:20px;
+    padding-top:20px;
+
+}
+.a, .s, .d, .f, .g, .h, .j, .k, .l{
+    display:none;
+    animation-name:fadeOut;
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+}
+.clsImage{
+    width:150px;
+    height:150px;
+}
+
+@keyframes fadeOut{
+    0% {display:block;opacity:100%;}
+
+    100%{opacity:0%;display:none;}
+}
