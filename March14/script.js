@@ -5,9 +5,24 @@ const remove = document.getElementById('removeButton');
 const surprise = document.getElementById('surprise');
 const heading = document.getElementById('heading');
 const allListItems=document.querySelectorAll('li');
+const closeButton = document.getElementById("closeButton");
+const openButton = document.getElementById("openButton");
 
 
-console.log(list);
+closeButton.addEventListener('click', ()=>{
+    closeButton.parentNode.style.display="none";
+});
+
+openButton.addEventListener('click', ()=>{
+    openButton.previousElementSibling.style.display='block';
+})
+list.addEventListener('mouseover', (event) =>{
+    event.target.textContent = event.target.textContent.toUpperCase();
+    // event.target.style.textTransform = "uppercase";
+});
+list.addEventListener('mouseout', (event) =>{
+    event.target.textContent = event.target.textContent.toLowerCase();
+});
 
 submitButton.addEventListener('click', ()=>{
     const listItem = document.createElement("li");
