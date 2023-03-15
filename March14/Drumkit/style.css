@@ -16,13 +16,13 @@ body{
     border:solid 1px gold;
     border-radius: 20px;
     color:gold;
-    background:linear-gradient(rgba(20,20,20,0.8), rgba(136, 34, 34, 0.9)),
+    background:linear-gradient(rgba(20,20,20,0.8), rgba(100, 17, 17, 0.95)),
         repeating-linear-gradient(45deg, rgba(64, 64, 64, 0.5) 2.5%, rgba(221, 221, 221, 0.5) 5%),
         repeating-linear-gradient(-45deg, rgba(64, 64, 64, 0.5) 2.5%, rgba(221, 221, 221, 0.5) 5%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
     justify-content: center;
-    box-shadow: 0 0 0.5em gold, inset 0 0 0.5em gold ,5px 10px 5px lightgray;
+    box-shadow: 1px 1px 4px gold, inset 1px 1px 4px gold ,5px 10px 5px lightgray;
     user-select:none;
     background-size: 200%;
     animation :background 120s infinite alternate;
