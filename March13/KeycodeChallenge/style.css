@@ -5,7 +5,7 @@
 }
 .clsFlex{
     display:flex;
-    justify-content:center;    
+    justify-content:center;        
 
 }
 .clsFlex div{
@@ -15,6 +15,7 @@
     color:#FCBA04;
     font-size: 2rem;
     box-shadow: 10px 10px 5px lightgray;
+
 }
 .clsHeading{
     text-align:center;

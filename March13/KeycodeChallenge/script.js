@@ -6,4 +6,4 @@ document.addEventListener("keypress", (event)=>{
         code.innerText = "Code:" + event.code;
         key.innerText = "Key:" + event.key;
         which.innerText = "Which:" + event.which;
-})
+});
