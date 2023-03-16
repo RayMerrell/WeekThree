@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dice game</title>
+</head>
+<body>
+    <div id="idHeaderContainer" class="clsMainHeaderContainer">
+        <div id="idHeader" class="clsMainHeader">
+            <h1>Roll Your Bones</h1>
+            <p>Choose your game type and press 'play'</p>
+        </div>
+    </div>
+    <div id="idGameType" class="clsGameTypeContainer">
+        <div class="clsGameType">One Player</div>
+        <div class="clsTrackAndButtonContainer">
+            <div id="idGameTypeTrack" class="clsGameTypeTrack"></div>
+            <div id="idGameTypeButton" class="clsGameTypeButton"></div>
+        </div>
+        <div class="clsGameType">Two Players</div>
+    </div>
+    <div id="idTargetContainer" class="clsTargetContainer">
+        <label id="idTargetText" class="clsTargetText">Choose your target</label>
+        <input type="number" id="idTargetValue" class="clsTargetInput" value="20" />  
+    </div>
+    <div id="idPlayerContainer" class="clsPlayerContainer">
+        <div id="idPlayer1" class="clsPlayer">
+            <div id="idPlayer1Title" class="clsPlayerName">
+                <h2>Player 1</h2>
+            </div>
+            <div id="idPlayer1Score" class="clsPlayerScore">
+                <p>Banked Score: 0 Total Score: 0</p>
+            </div>
+            <div id="idPlayer1DieContainer" class="clsDieContainer">
+                <div class="clsFloor"></div>
+                <div id="idPlayer1Die" class="clsDie clsDieAnimation">
+                    <div id="Player1DieSide1" class="clsDieFace clsSide1">1</div>
+                    <div id="Player1DieSide2" class="clsDieFace clsSide2">2</div>
+                    <div id="Player1DieSide3" class="clsDieFace clsSide3">3</div>
+                    <div id="Player1DieSide4" class="clsDieFace clsSide4">4</div>
+                    <div id="Player1DieSide5" class="clsDieFace clsSide5">5</div>
+                    <div id="Player1DieSide6" class="clsDieFace clsSide6">6</div>
+                </div>
+            </div>
+            <div id="idPlayer1Roll"></div>
+        </div>
+        <div id="idPlayer2" class="clsPlayer">
+            <div id="idPlayer1Title" class="clsPlayerName">
+                <h2>Player 2</h2>
+            </div>
+            <div id="idPlayer2Score" class="clsPlayerScore">
+                <p>Banked Score: 0 Total Score: 0</p>
+            </div>
+            <div id="idPlayer2DieContainer" class="clsDieContainer">
+                <div id="idPlayer2Die" class="clsDie">
+                    <div id="Player2DieSide1" class="clsDieFace clsSide1">1</div>
+                    <div id="Player2DieSide2" class="clsDieFace clsSide2">2</div>
+                    <div id="Player2DieSide3" class="clsDieFace clsSide3">3</div>
+                    <div id="Player2DieSide4" class="clsDieFace clsSide4">4</div>
+                    <div id="Player2DieSide5" class="clsDieFace clsSide5">5</div>
+                    <div id="Player2DieSide6" class="clsDieFace clsSide6">6</div>
+                </div>
+            </div>
+            <div id="idPlayer1Roll"><button class="clsButton" id="idButton">Press</button></div>
+        </div>
+    </div>
+
+    <script language="javascript" src="./script.js"></script>
+</body>
+</html>

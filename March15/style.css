@@ -1,0 +1,239 @@
+@font-face {
+    font-family: Abril;
+    src: url("./fonts/AbrilFatface-Regular.ttf");
+}
+*{
+    padding:0;
+    margin:0;
+    font-family: Abril,Verdana, Geneva, Tahoma, sans-serif;
+
+}
+:root{
+    --desiredRotation:rotate3d(1,0, 0, -90deg);
+}
+body{
+    background:#777;
+}
+.clsMainHeaderContainer{
+    margin-top:1em;
+    display:flex;
+    justify-content:center;
+}
+.clsMainHeader{
+    background: linear-gradient(#222, #811);
+    border: 1px solid gold;
+    border-radius:1em;
+    width:75vw;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    box-shadow:5px 5px 5px rgb(73, 73, 73), 0.01em 0.01em 0.2em inset gold;    
+    text-align: center;
+}
+.clsMainHeader h1{
+    letter-spacing: 0.04em;
+    font-size: 5em;
+    color:gold;
+    font-weight:700;
+    padding-bottom: 0.25em;
+}
+.clsMainHeader p{
+    letter-spacing: 0.02em;
+    color:gold;
+    font-weight:200;
+    font-size:1.5em;
+    padding-bottom:0.25em;
+}
+.clsGameTypeContainer{
+    margin-top:2em;
+    margin-bottom:2em;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    width:100%;    
+    padding-right:1em;
+    padding-left:1em;
+}
+.clsTrackAndButtonContainer{
+    position:relative;
+    min-width:20em;
+}
+.clsGameType{
+    letter-spacing: 0.03em;
+    padding-left:2em;
+    padding-right:2em;
+    font-size:1.2em;
+    font-weight:400;
+    color:gold;
+    text-shadow:0 0 0.2em #222;
+}
+.clsGameTypeTrack{
+    background-color: #444;
+    height:0.8em;
+    border-radius:0.4em;
+    border-bottom:#AAA 1px solid;
+    border-right:#AAA 1px solid;
+    border-top: #222 1px solid;
+    border-left:#222 1px solid; 
+
+}
+.clsGameTypeButton{
+    width:5em;
+    height:2em;
+    background:linear-gradient(90deg, #555, #555 1em,#AAA 1.1em, #222 1.2em,#555 1.3em,
+        #555 2em,#AAA 2.1em, #222 2.2em,#555 2.3em,
+        #555 3em,#AAA 3.1em, #222 3.2em,#555 3.3em,
+        #555 4em,#AAA 4.1em, #222 4.2em,#555 4.3em,
+    #555);
+    position:absolute;
+    top:-0.55em;
+    left:16em;
+    border-top:1px solid #AAA;
+    border-left:1px solid #AAA;
+    border-bottom:1px solid #222;
+    border-right:1px solid #222; 
+    border-radius: 2em;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(20, 20, 20, 0.5);
+    cursor:pointer;
+}
+.clsTargetContainer{
+    display:flex;
+    justify-content: center;
+    color:gold;
+    font-size:1.5em;    
+    text-shadow:0 0 0.2em #222;
+}
+.clsTargetText{
+    padding-right:1em;
+}
+.clsTargetInput{
+    width:3em;
+    text-align: end;
+    border-bottom:#AAA 1px solid;
+    border-right:#AAA 1px solid;
+    border-top: #222 1px solid;
+    border-left:#222 1px solid; 
+    border-radius: 0.3em;
+    font-size:1em;   
+
+}
+.clsPlayerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top:100px;
+}
+.clsPlayer{
+    color:gold;
+    margin:1em;
+    padding:0.5em;
+    width:30vw;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    height:30em;
+    background: linear-gradient(#222, #811);
+    border-bottom:gold 1px solid;
+    border-right:gold 1px solid;
+    border-top: #444 1px solid;
+    border-left:#444 1px solid; 
+    border-radius:2em;    
+    box-shadow:0.01em 0.01em 0.2em inset gold;     
+    text-shadow:0 0 0.2em #222;
+}
+h2{
+    letter-spacing: 0.04em;
+}
+
+
+.clsDieContainer{
+    position:relative;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    /* border:solid 1px green; */
+    width:100%;
+    height:100%;
+    perspective:10em;
+    overflow:hidden;
+}
+.clsDie{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform-style: preserve-3d;
+    transform-origin:center;    
+/*  1=(0, 1, 0, 90deg)
+    2=(1, 0, 0, 90deg)
+    3=(0, 0, 0, 0)
+    4=(0,1, 0, 180deg)
+    5=(1,0, 0, -90deg)
+    6=(0,1, 0, -90deg)
+    */
+    /* transform: rotate3d(0,1, 0, -90deg); */
+}
+.clsDieAnimation{
+    animation: diceRotate 8s;
+}
+.clsDieReveal{
+    animation: diceReveal 2s;
+}
+.clsDieFace{
+    width:2em;
+    height:2em;
+    background-image:radial-gradient( #FFF, #222);
+    /* background-color: #9F5D14; */
+    text-align:center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    font-weight:400;
+    font-size:4rem;
+    border:solid 1px #222;
+    /* opacity:50%; */
+}
+.clsSide1{
+    translate:-2em -1em 0 ;
+    rotate: y -90deg;
+}
+.clsSide2{
+    translate:-1em  0 0;
+    rotate: x -90deg;
+}
+.clsSide3{
+    translate:-1em  -1em  1em;
+}
+.clsSide4{
+    translate:-1em  -1em  -1em;
+    rotate:y 180deg;
+}
+.clsSide5{
+    translate:-1em  -2em 0;
+    rotate: x 90deg;
+}
+.clsSide6{
+    translate:0  -1em  0;
+    rotate:y 90deg;
+}
+
+@keyframes diceRotate{
+    0%{
+        transform: rotate3d(1,1, 1, 0deg) scale3d(0.0, 0.0, 0.0);
+    }
+    50%{
+        transform: rotate3d(1,1, 1, 359deg) scale3d(0.5,0.5, 0.5);
+    }
+    100%{
+        transform: var(--desiredRotation) scale3d(0.8, 0.8, 0.8);
+    }
+}
+@keyframes diceReveal{
+    0%{
+        transform: var(--desiredRotation) scale3d(0.8, 0.8, 0.8);
+    }
+    100%{
+        transform: var(--desiredRotation) scale3d(1,1,1);
+    }
+}
