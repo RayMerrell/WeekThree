@@ -2,11 +2,11 @@
     font-family: Abril;
     src: url("./fonts/AbrilFatface-Regular.ttf");
 }
+
 *{
     padding:0;
     margin:0;
     font-family: Abril,Verdana, Geneva, Tahoma, sans-serif;
-
 }
 :root{
     --desiredRotation:rotate3d(1,0, 0, -90deg);
@@ -32,7 +32,7 @@ body{
 }
 .clsMainHeader h1{
     letter-spacing: 0.04em;
-    font-size: 5em;
+    font-size: 4em;
     color:gold;
     font-weight:700;
     padding-bottom: 0.25em;
@@ -41,12 +41,12 @@ body{
     letter-spacing: 0.02em;
     color:gold;
     font-weight:200;
-    font-size:1.5em;
+    font-size:1.25em;
     padding-bottom:0.25em;
 }
 .clsGameTypeContainer{
-    margin-top:2em;
-    margin-bottom:2em;
+    margin-top:1em;
+    margin-bottom:0.5em;
     display:flex;
     flex-direction:row;
     align-items: center;
@@ -96,6 +96,7 @@ body{
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(20, 20, 20, 0.5);
     cursor:pointer;
+    transition: ease-in-out left 0.5s;
 }
 .clsTargetContainer{
     display:flex;
@@ -122,7 +123,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    top:100px;
+    position:relative;
 }
 .clsPlayer{
     color:gold;
@@ -132,7 +133,7 @@ body{
     display:flex;
     align-items: center;
     flex-direction:column;
-    height:30em;
+    height:22em;
     background: linear-gradient(#222, #811);
     border-bottom:gold 1px solid;
     border-right:gold 1px solid;
@@ -145,8 +146,6 @@ body{
 h2{
     letter-spacing: 0.04em;
 }
-
-
 .clsDieContainer{
     position:relative;
     display:flex;
@@ -164,7 +163,10 @@ h2{
     left:50%;
     transform-style: preserve-3d;
     transform-origin:center;    
-/*  1=(0, 1, 0, 90deg)
+    visibility:hidden;
+    transition:visibility 2s;
+    box-shadow: 10px 10px 5px black;
+/*  1=(0, 1, 0, 90deg) 
     2=(1, 0, 0, 90deg)
     3=(0, 0, 0, 0)
     4=(0,1, 0, 180deg)
@@ -174,10 +176,7 @@ h2{
     /* transform: rotate3d(0,1, 0, -90deg); */
 }
 .clsDieAnimation{
-    animation: diceRotate 8s;
-}
-.clsDieReveal{
-    animation: diceReveal 2s;
+    animation: diceRotate 6s linear;
 }
 .clsDieFace{
     width:2em;
@@ -220,20 +219,102 @@ h2{
 
 @keyframes diceRotate{
     0%{
-        transform: rotate3d(1,1, 1, 0deg) scale3d(0.0, 0.0, 0.0);
+        transform: rotateX(1080deg) scale3d(0.0, 0.0, 0.0);
     }
-    50%{
-        transform: rotate3d(1,1, 1, 359deg) scale3d(0.5,0.5, 0.5);
+    33%{
+        transform: rotateX(720deg) scale3d(0.33,0.34, 0.34);
+    }
+    66%{
+        transform: rotateX(360deg) scale3d(0.68, 0.68, 0.68);
     }
     100%{
-        transform: var(--desiredRotation) scale3d(0.8, 0.8, 0.8);
+        transform: rotate3d--desiredRotation scale3d(1,1,1);
     }
 }
-@keyframes diceReveal{
-    0%{
-        transform: var(--desiredRotation) scale3d(0.8, 0.8, 0.8);
-    }
-    100%{
-        transform: var(--desiredRotation) scale3d(1,1,1);
-    }
+.clsButtonBox{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.clsPlayerButton{
+    margin:0.2em;
+    width:10em;
+    height:2em;
+    background:transparent;
+    color:gold;
+    font-size:1.5em;
+    border-radius: 1em;
+    border:1px solid #777;
+    cursor: pointer;    
+    text-shadow:0 0 0.2em #222;
+    letter-spacing: 0.04em;;
+}
+.clsUnselectable{
+    color:#AA9200;
+    cursor:inherit;
+    border:none;
+}
+.clsFooter{
+    width:100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.clsStartButton{
+    width:10em;
+    height:2em;
+    background: #777;
+    color:gold;
+    font-size:1.5em;
+    border-radius: 1em;
+    border:1px solid #777;
+    cursor: pointer;    
+    text-shadow:0 0 0.2em #222;
+    letter-spacing: 0.04em;
+}
+.clsButton:hover{
+    border:solid 1px gold;
+    box-shadow: 0.01em 0.01em 0.2em inset gold, 0.01em 0.01em 0.2em gold;
+}
+@property --gradientAngle{
+    syntax:"<angle>";
+    initial-value:90deg;
+    inherits:false;
+}
+@keyframes gradientRotation{
+    0% {--gradientAngle:0deg;}
+    100%{--gradientAngle: 360deg;}
+}
+.clsRotatingGlow{
+    position:relative;
+}
+.clsRotatingGlow::before, .clsRotatingGlow::after{
+    content:"";
+    filter:blur(0.25em);
+    position: absolute;
+    inset:0;
+    z-index: -1;
+    /* background: gold; */
+    background:conic-gradient(
+        from var(--gradientAngle),
+        rgb(235, 224, 165),
+        gold,
+        rgb(235, 224, 165),
+        gold,
+        rgb(235, 224, 165),
+        gold,
+        rgb(235, 224, 165),
+        gold,
+        rgb(235, 224, 165));
+    border-radius: inherit;
+    animation: gradientRotation 10s linear infinite;
+}
+.clsStatusBox{
+    letter-spacing: 0.02em;
+    color:gold;
+    font-weight:200;
+    font-size:1.25em;
+    padding-bottom:0.25em;
+    display:none;
+    text-align: center;
 }
